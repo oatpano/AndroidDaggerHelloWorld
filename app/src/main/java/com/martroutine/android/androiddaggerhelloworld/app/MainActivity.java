@@ -1,17 +1,27 @@
 package com.martroutine.android.androiddaggerhelloworld.app;
 
-import android.app.Activity;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import javax.inject.Inject;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends DemoBaseActivity {
+    @Inject
+    LocationManager locationManager;
+
+    @Inject
+    DateUtil dateUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView textView = (TextView) findViewById(R.id.datetime);
+        textView.setText(dateUtil.toString());
     }
 
 
