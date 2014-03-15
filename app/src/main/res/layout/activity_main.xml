@@ -9,7 +9,15 @@
     tools:context="com.martroutine.android.androiddaggerhelloworld.app.MainActivity">
 
     <TextView
+        android:id="@+id/helloworld"
         android:text="@string/hello_world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/datetime"
+        android:layout_below="@+id/helloworld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
