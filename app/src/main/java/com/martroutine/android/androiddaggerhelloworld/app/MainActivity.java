@@ -4,12 +4,27 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import javax.inject.Inject;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
 
 public class MainActivity extends DemoBaseActivity {
+
+    @InjectView(R.id.editText_to)
+    EditText editText_to;
+
+    @InjectView(R.id.result)
+    TextView result;
+
+    @InjectView(R.id.datetime)
+    TextView datetime;
+
     @Inject
     LocationManager locationManager;
 
@@ -20,10 +35,10 @@ public class MainActivity extends DemoBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView textView = (TextView) findViewById(R.id.datetime);
-        textView.setText(dateUtil.toString());
-    }
+        ButterKnife.inject(this);
 
+        datetime.setText(dateUtil.toString());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -43,6 +58,11 @@ public class MainActivity extends DemoBaseActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @OnClick(R.id.submit_button)
+    public void submit(){
+        result.setText("Hello World to = " + editText_to.getText().toString());
     }
 
 }
