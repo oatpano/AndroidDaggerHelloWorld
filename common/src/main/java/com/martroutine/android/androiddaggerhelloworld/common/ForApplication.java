@@ -1,13 +1,14 @@
-package com.martroutine.android.androiddaggerhelloworld.app;
+package com.martroutine.android.androiddaggerhelloworld.common;
 
-/**
- * Created by MARTROUTINE on 3/15/14.
- */
 import java.lang.annotation.Retention;
+
 import javax.inject.Qualifier;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
-@Qualifier @Retention(RUNTIME)
+/**
+ * Created by MARTROUTINE on 3/18/14.
+ */
+@Qualifier
+@Retention(RUNTIME)
 public @interface ForApplication {
 }
