@@ -5,11 +5,11 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:name=".DemoApplication"
+        android:name=".AndroidDaggerApplication"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.martroutine.android.androiddaggerhelloworld.app.MainActivity"
+            android:name="com.martroutine.android.androiddaggerhelloworld.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
