@@ -1,4 +1,4 @@
-package com.martroutine.android.androiddaggerhelloworld.app;
+package com.martroutine.android.androiddaggerhelloworld.activity;
 
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -6,10 +6,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.martroutine.android.androiddaggerhelloworld.app.R;
+import com.martroutine.android.androiddaggerhelloworld.util.DateUtil;
+
 import javax.inject.Inject;
 
 
-public class MainActivity extends DemoBaseActivity {
+public class MainActivity extends BaseDaggerActivity {
     @Inject
     LocationManager locationManager;
 
@@ -23,7 +26,6 @@ public class MainActivity extends DemoBaseActivity {
         TextView textView = (TextView) findViewById(R.id.datetime);
         textView.setText(dateUtil.toString());
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,18 +1,11 @@
-package com.martroutine.android.androiddaggerhelloworld.app;
+package com.martroutine.android.androiddaggerhelloworld.util;
 
 import org.joda.time.DateTime;
 
-import dagger.Module;
-
 /**
- * Created by MARTROUTINE on 3/15/14.
+ * Created by MARTROUTINE on 3/19/14.
  */
-
-@Module(
-        library = true
-)
 public class DateUtil {
-
     private DateTime dateTime;
 
     public DateUtil() {
@@ -22,7 +15,7 @@ public class DateUtil {
     @Override
     public String toString() {
         return "DateUtil{" +
-                dateTime.toString() +
+                "dateTime= " + dateTime +
                 '}';
     }
 }

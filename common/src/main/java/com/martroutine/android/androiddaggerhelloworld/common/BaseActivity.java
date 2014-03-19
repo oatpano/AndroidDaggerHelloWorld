@@ -37,6 +37,13 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onDestroy();
     }
 
+    protected <T> T getView(int id) {
+        return (T) findViewById(id);
+    }
+
+    /**
+     * Inject the supplied {@code object} using the activity-specific graph.
+     * */
     public void inject(Object object) {
         mActivityGraph.inject(object);
     }

@@ -15,7 +15,10 @@ import static android.content.Context.LOCATION_SERVICE;
  */
 
 @Module(
-        library = true
+        complete = false,
+        library = true,
+        injects = {
+        }
 )
 public class AndroidAppModule {
     static Context sApplicationContext = null;
