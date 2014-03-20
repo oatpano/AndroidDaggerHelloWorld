@@ -3,6 +3,9 @@ package com.martroutine.android.androiddaggerhelloworld.common;
 import android.content.Context;
 import android.location.LocationManager;
 
+import com.squareup.otto.Bus;
+import com.squareup.otto.ThreadEnforcer;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -34,5 +37,11 @@ public class AndroidAppModule {
     @Singleton
     LocationManager provideLocationManager() {
         return (LocationManager) sApplicationContext.getSystemService(LOCATION_SERVICE);
+    }
+
+    @Provides
+    @Singleton
+    Bus provideBus(){
+        return  new Bus(ThreadEnforcer.ANY);
     }
 }

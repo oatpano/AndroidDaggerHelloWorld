@@ -3,6 +3,10 @@ package com.martroutine.android.androiddaggerhelloworld.common;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.squareup.otto.Bus;
+
+import javax.inject.Inject;
+
 import dagger.ObjectGraph;
 
 /**
@@ -10,6 +14,9 @@ import dagger.ObjectGraph;
  */
 public abstract class BaseActivity extends FragmentActivity {
     private ObjectGraph mActivityGraph;
+
+    @Inject
+    protected Bus bus;
 
     @Override
     protected void onStart() {
@@ -26,6 +33,8 @@ public abstract class BaseActivity extends FragmentActivity {
 
         // Inject ourselves so subclasses will have dependencies fulfilled when this method returns.
         mActivityGraph.inject(this);
+
+        bus.register(this);
     }
 
     @Override
